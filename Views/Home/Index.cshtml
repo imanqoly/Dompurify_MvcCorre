@@ -1,0 +1,30 @@
+﻿@model Name
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form asp-action="Index">
+        <div class="form-group">
+            <label asp-for="TheName" class="control-label"></label>
+            <input asp-for="TheName" class="form-control" />
+            <span asp-validation-for="TheName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+
+
+@*Your Name is @ViewData["Name"]*@
+
+Yoyr Name is @Html.Raw(@Model.TheName)
+
+
+<script>
+    console.log("@ViewData["Name"]")
+</script>
